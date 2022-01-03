@@ -34,7 +34,7 @@ class VideoFields:
         help=_("Optional, for older browsers: the YouTube ID for the normal speed video."),
         display_name=_("YouTube ID"),
         scope=Scope.settings,
-        default="3_yD_cEKoCk"
+        default="CE8mtYAHx5U"
     )
     youtube_id_0_75 = String(
         help=_("Optional, for older browsers: the YouTube ID for the .75x speed video."),
@@ -77,7 +77,7 @@ class VideoFields:
     #front-end code of video player checks logical validity of (start_time, end_time) pair.
 
     download_video = Boolean(
-        help=_("Allow students to download versions of this video in different formats if they cannot use the edX video"
+        help=_("Allow students to download versions of this video in different formats if they cannot use the LP+ADOPT video"
                " player or do not have access to YouTube. You must add at least one non-YouTube URL "
                "in the Video File URLs field."),
         display_name=_("Video Download Allowed"),
@@ -189,7 +189,7 @@ class VideoFields:
         default=False
     )
     edx_video_id = String(
-        help=_("If you were assigned a Video ID by edX for the video to play in this component, enter the ID here."
+        help=_("If you were assigned a Video ID by LP+ADOPT for the video to play in this component, enter the ID here."
                " In this case, do not enter values in the Default Video URL, the Video File URLs, "
                "and the YouTube ID fields. If you were not assigned a Video ID,"
                " enter values in those other fields and ignore this field."),
