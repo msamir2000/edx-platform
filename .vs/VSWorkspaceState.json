@@ -1,16 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\common\\lib\\xmodule\\xmodule",
-    "\\common\\lib\\xmodule\\xmodule\\js",
-    "\\common\\lib\\xmodule\\xmodule\\templates",
-    "\\common\\lib\\xmodule\\xmodule\\templates\\about",
     "\\lms",
-    "\\lms\\static",
-    "\\lms\\static\\js",
-    "\\lms\\static\\js\\i18n",
-    "\\lms\\static\\js\\i18n\\uk"
+    "\\lms\\templates"
   ],
-  "SelectedNode": "\\lms\\static\\js\\i18n\\uk\\djangojs.js",
+  "SelectedNode": "\\lms\\templates\\certificates",
   "PreviewInSolutionExplorer": false
 }
