@@ -2,10 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\lms",
-    "\\lms\\static",
     "\\lms\\static\\images",
-    "\\lms\\static\\images\\certificates"
+    "\\lms\\static\\images\\certificates",
+    "\\lms\\templates"
   ],
-  "SelectedNode": "\\lms\\static\\images\\certificates\\audit.png",
+  "SelectedNode": "\\lms\\templates\\certificates",
   "PreviewInSolutionExplorer": false
 }
