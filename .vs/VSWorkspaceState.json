@@ -3,9 +3,8 @@
     "",
     "\\lms",
     "\\lms\\static\\images",
-    "\\lms\\static\\images\\certificates",
     "\\lms\\templates"
   ],
-  "SelectedNode": "\\lms\\templates\\certificates",
+  "SelectedNode": "\\lms\\templates\\credit_notifications",
   "PreviewInSolutionExplorer": false
 }
