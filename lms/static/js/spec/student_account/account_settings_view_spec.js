@@ -22,7 +22,7 @@ define(['backbone',
                         title: 'Basic Account Information',
                         messageType: 'info',
                         message: 'Your profile settings are managed by Test Enterprise. ' +
-                        'Contact your administrator or <a href="https://support.edx.org/">edX Support</a> for help.',
+                        'Contact your administrator or <a href="https://lpplus.com/support-centre/">Support</a> for help.',
                         fields: [
                             {
                                 view: new FieldViews.ReadonlyFieldView({

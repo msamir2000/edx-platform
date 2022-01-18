@@ -4895,7 +4895,7 @@ msgstr ""
 #: lms/static/js/student_account/views/account_settings_factory.js
 msgid ""
 "Optionally, link your personal accounts to the social media icons on your "
-"edX profile."
+"LP+ADOPT profile."
 msgstr ""
 
 #: lms/static/js/student_account/views/account_settings_factory.js

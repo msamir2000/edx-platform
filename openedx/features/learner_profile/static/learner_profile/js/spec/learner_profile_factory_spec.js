@@ -42,7 +42,7 @@ define(
                     profile_image_upload_url: Helpers.IMAGE_UPLOAD_API_URL,
                     profile_image_remove_url: Helpers.IMAGE_REMOVE_API_URL,
                     default_visibility: 'all_users',
-                    platform_name: 'edX',
+                    platform_name: 'LP+ADOPT',
                     find_courses_url: '/courses/',
                     account_settings_data: Helpers.createAccountSettingsData(options),
                     preferences_data: Helpers.createUserPreferencesData()
