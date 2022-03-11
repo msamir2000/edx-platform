@@ -1,17 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\lms",
-    "\\lms\\envs",
-    "\\lms\\templates",
-    "\\lms\\templates\\student_account",
-    "\\lms\\templates\\widgets",
-    "\\lms\\templates\\wiki",
-    "\\openedx",
-    "\\openedx\\core",
-    "\\openedx\\core\\djangoapps",
-    "\\openedx\\core\\djangoapps\\profile_images"
+    "\\cms",
+    "\\cms\\djangoapps",
+    "\\cms\\djangoapps\\contentstore"
   ],
-  "SelectedNode": "\\lms\\templates\\student_account\\form_field.underscore",
+  "SelectedNode": "\\cms\\djangoapps\\contentstore\\courseware_index.py",
   "PreviewInSolutionExplorer": false
 }
