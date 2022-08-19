@@ -1,6 +1,9 @@
 """
 Views for the learner dashboard.
 """
+from datetime import datetime
+from django.urls import reverse
+
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_GET
@@ -13,12 +16,13 @@ from common.djangoapps.student.views.dashboard import (
     complete_course_mode_info,
     get_course_enrollments,
     get_org_black_and_whitelist_for_site,
+    get_filtered_course_entitlements,
 )
 from common.djangoapps.util.json_request import JsonResponse
 from lms.djangoapps.bulk_email.models import Optout
 from lms.djangoapps.bulk_email.models_api import is_bulk_email_feature_enabled
 from lms.djangoapps.commerce.utils import EcommerceService
-from lms.djangoapps.learner_home.serializers import LearnerDashboardSerializer
+from lms.djangoapps.learner_home.serializers import LearnerDashboardSerializer, EntitlementSerializer
 from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers
 
 
@@ -88,6 +92,27 @@ def get_enrollments(user, org_allow_list, org_block_list, course_limit=None):
 
     return course_enrollments, course_mode_info
 
+def get_entitlements(user, org_allow_list, org_block_list):
+    """Get entitlments for the user"""
+    filtered_entitlements, course_entitlement_available_sessions = get_filtered_course_entitlements(user, org_allow_list, org_block_list)
+
+    course_entitlements = []
+
+    for course_entitlement in filtered_entitlements:
+        entitlement = {
+            "availableSesssion": course_entitlement_available_sessions[str(course_entitlement.uuid)],
+            "isRefundable": course_entitlement.is_entitlement_refundable(),
+            "isFulfilled": bool(entitlement.enrollment_course_run),
+            "canViewCourse": None, # unclear
+            "changeDeadline": None, # unclear
+            "isExpired": entitlement.expired_at > datetime.now(),
+            "expirationDate": entitlement.expired_at,
+            "enrollUrl": reverse('entitlements_api:v1:enrollments', args=[str(entitlement.uuid)]),
+            "leaveSessionURL": reverse('entitlements_api:v1:enrollments', args=[str(entitlement.uuid)]),
+        }
+        course_entitlements.append(EntitlementSerializer(entitlement).data)
+
+    return course_entitlements
 
 def get_email_settings_info(user, course_enrollments):
     """
@@ -131,7 +156,9 @@ def dashboard_view(request):  # pylint: disable=unused-argument
     site_org_whitelist, site_org_blacklist = get_org_black_and_whitelist_for_site()
 
     # TODO - Get entitlements (moving before enrollments because we use this to filter the enrollments)
-    course_entitlements = []
+    course_entitlements = get_entitlements(
+        user, site_org_whitelist, site_org_blacklist
+    )
 
     # Get enrollments
     course_enrollments, course_mode_info = get_enrollments(
@@ -162,6 +189,7 @@ def dashboard_view(request):  # pylint: disable=unused-argument
         "enterpriseDashboards": None,
         "platformSettings": get_platform_settings(),
         "enrollments": course_enrollments,
+        "entitlements": course_entitlements,
         "unfulfilledEntitlements": [],
         "suggestedCourses": [],
     }

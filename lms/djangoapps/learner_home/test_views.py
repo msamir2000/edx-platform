@@ -11,6 +11,7 @@ from rest_framework.test import APITestCase
 
 from common.djangoapps.course_modes.models import CourseMode
 from common.djangoapps.course_modes.tests.factories import CourseModeFactory
+from common.djangoapps.entitlements.tests.factories import CourseEntitlementFactory
 from common.djangoapps.student.tests.factories import (
     CourseEnrollmentFactory,
     UserFactory,
@@ -21,6 +22,7 @@ from lms.djangoapps.learner_home.views import (
     get_enrollments,
     get_platform_settings,
     get_user_account_confirmation_info,
+    get_entitlements,
 )
 from lms.djangoapps.learner_home.test_serializers import random_url
 from xmodule.modulestore.tests.django_utils import (
@@ -164,6 +166,30 @@ class TestGetEnrollments(SharedModuleStoreTestCase):
         self.assertEqual(returned_enrollments, [])
         self.assertEqual(course_mode_info, {})
 
+
+class TestGetEntitlements(SharedModuleStoreTestCase):
+    """Tests for get_entitlements"""
+
+    def setUp(self):
+        super().setUp()
+        self.user = UserFactory()
+
+    def create_test_entitlement(self):
+        """create an entitlement course for the user"""
+        return CourseEntitlementFactory.create(user=self.user)
+
+    def test_basic(self):
+        test_entitlements = [self.create_test_entitlement() for i in range(3)]
+
+        course_entitlments = get_entitlements(self.user, None, None)
+
+        assert len(course_entitlments) == len(test_entitlements)
+
+    def test_empty(self):
+        course_entitlments= get_entitlements(self.user, None, None)
+
+        # Then I return an empty list and dict
+        self.assertEqual(course_entitlments, [])
 
 class TestGetEmailSettingsInfo(SharedModuleStoreTestCase):
     """Tests for get_email_settings_info"""
