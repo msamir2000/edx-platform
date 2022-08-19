@@ -1,5 +1,6 @@
 """Test for learner views and related functions"""
 
+from django.utils import timezone
 import json
 from unittest import TestCase
 from unittest.mock import patch
@@ -176,7 +177,10 @@ class TestGetEntitlements(SharedModuleStoreTestCase):
 
     def create_test_entitlement(self):
         """create an entitlement course for the user"""
-        return CourseEntitlementFactory.create(user=self.user)
+        enrollment = CourseEnrollmentFactory(user=self.user, is_active=True)
+        return  CourseEntitlementFactory.create(
+            user=self.user, enrollment_course_run=enrollment, expired_at=timezone.now()
+        )
 
     def test_basic(self):
         test_entitlements = [self.create_test_entitlement() for i in range(3)]
@@ -186,10 +190,11 @@ class TestGetEntitlements(SharedModuleStoreTestCase):
         assert len(course_entitlments) == len(test_entitlements)
 
     def test_empty(self):
-        course_entitlments= get_entitlements(self.user, None, None)
+        course_entitlments = get_entitlements(self.user, None, None)
 
         # Then I return an empty list and dict
         self.assertEqual(course_entitlments, [])
+
 
 class TestGetEmailSettingsInfo(SharedModuleStoreTestCase):
     """Tests for get_email_settings_info"""

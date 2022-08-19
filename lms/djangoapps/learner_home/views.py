@@ -1,7 +1,7 @@
 """
 Views for the learner dashboard.
 """
-from datetime import datetime
+from django.utils import timezone
 from django.urls import reverse
 
 from django.conf import settings
@@ -92,27 +92,31 @@ def get_enrollments(user, org_allow_list, org_block_list, course_limit=None):
 
     return course_enrollments, course_mode_info
 
+
 def get_entitlements(user, org_allow_list, org_block_list):
     """Get entitlments for the user"""
-    filtered_entitlements, course_entitlement_available_sessions = get_filtered_course_entitlements(user, org_allow_list, org_block_list)
+    filtered_entitlements, course_entitlement_available_sessions, _ = get_filtered_course_entitlements(
+        user, org_allow_list, org_block_list
+    )
 
     course_entitlements = []
 
     for course_entitlement in filtered_entitlements:
         entitlement = {
-            "availableSesssion": course_entitlement_available_sessions[str(course_entitlement.uuid)],
+            "availableSessions": course_entitlement_available_sessions[str(course_entitlement.uuid)],
             "isRefundable": course_entitlement.is_entitlement_refundable(),
-            "isFulfilled": bool(entitlement.enrollment_course_run),
-            "canViewCourse": None, # unclear
-            "changeDeadline": None, # unclear
-            "isExpired": entitlement.expired_at > datetime.now(),
-            "expirationDate": entitlement.expired_at,
-            "enrollUrl": reverse('entitlements_api:v1:enrollments', args=[str(entitlement.uuid)]),
-            "leaveSessionURL": reverse('entitlements_api:v1:enrollments', args=[str(entitlement.uuid)]),
+            "isFulfilled": bool(course_entitlement.enrollment_course_run),
+            "canViewCourse": None,  # unclear
+            "changeDeadline": None,  # unclear
+            "isExpired": course_entitlement.expired_at > timezone.now(),
+            "expirationDate": course_entitlement.expired_at,
+            "enrollUrl": reverse('entitlements_api:v1:enrollments', args=[str(course_entitlement.uuid)]),
+            "leaveSessionURL": reverse('entitlements_api:v1:enrollments', args=[str(course_entitlement.uuid)]),
         }
         course_entitlements.append(EntitlementSerializer(entitlement).data)
 
     return course_entitlements
+
 
 def get_email_settings_info(user, course_enrollments):
     """
