@@ -477,6 +477,8 @@ COMPREHENSIVE_THEME_DIRS = [REPO_ROOT / "themes", REPO_ROOT / "common/test"]
 COMPREHENSIVE_THEME_LOCALE_PATHS = [REPO_ROOT / "themes/conf/locale", ]
 ENABLE_COMPREHENSIVE_THEMING = True
 
+PREPEND_LOCALE_PATHS = []
+
 LMS_ROOT_URL = "http://localhost:8000"
 
 # Needed for derived settings used by cms only.
@@ -599,3 +601,7 @@ RESET_PASSWORD_TOKEN_VALIDATE_API_RATELIMIT = '2/m'
 RESET_PASSWORD_API_RATELIMIT = '2/m'
 
 CORS_ORIGIN_WHITELIST = ['https://sandbox.edx.org']
+
+#################### Network configuration ####################
+# Tests are not behind any proxies
+CLOSEST_CLIENT_IP_FROM_HEADERS = []

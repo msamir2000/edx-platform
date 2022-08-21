@@ -817,7 +817,7 @@ FEATURES = {
     # .. toggle_tickets: https://openedx.atlassian.net/browse/OSPR-1880
     'ENABLE_HTML_XBLOCK_STUDENT_VIEW_DATA': False,
 
-    # .. toggle_name: FEATURES['ENABLE_CHANGE_USER_PASSWORD_ADMIN']
+    # .. toggle_name: FEATURES['ENABLE_PASSWORD_RESET_FAILURE_EMAIL']
     # .. toggle_implementation: DjangoSetting
     # .. toggle_default: False
     # .. toggle_description: Whether to send an email for failed password reset attempts or not. This happens when a
@@ -948,6 +948,18 @@ FEATURES = {
     # .. toggle_target_removal_date: 2021-10-01
     # .. toggle_tickets: 'https://openedx.atlassian.net/browse/MICROBA-1405'
     'ENABLE_V2_CERT_DISPLAY_SETTINGS': False,
+
+    # .. toggle_name: FEATURES['DISABLE_UNENROLLMENT']
+    # .. toggle_implementation: DjangoSetting
+    # .. toggle_default: False
+    # .. toggle_description: Set to True to disable self-unenrollments via REST API.
+    #   This also hides the "Unenroll" button on the Learner Dashboard.
+    # .. toggle_use_cases: open_edx
+    # .. toggle_creation_date: 2021-10-11
+    # .. toggle_warnings: For consistency in user experience, keep the value in sync with the setting of the same name
+    #   in the LMS and CMS.
+    # .. toggle_tickets: 'https://github.com/open-craft/edx-platform/pull/429'
+    'DISABLE_UNENROLLMENT': False,
 }
 
 # Specifies extra XBlock fields that should available when requested via the Course Blocks API
@@ -1840,7 +1852,9 @@ STATICI18N_OUTPUT_DIR = "js/i18n"
 
 # Localization strings (e.g. django.po) are under these directories
 def _make_locale_paths(settings):  # pylint: disable=missing-function-docstring
-    locale_paths = [settings.REPO_ROOT + '/conf/locale']  # edx-platform/conf/locale/
+    locale_paths = list(settings.PREPEND_LOCALE_PATHS)
+    locale_paths += [settings.REPO_ROOT + '/conf/locale']  # edx-platform/conf/locale/
+
     if settings.ENABLE_COMPREHENSIVE_THEMING:
         # Add locale paths to settings for comprehensive theming.
         for locale_path in settings.COMPREHENSIVE_THEME_LOCALE_PATHS:
@@ -3982,6 +3996,21 @@ SEARCH_RESULT_PROCESSOR = "lms.lib.courseware_search.lms_result_processor.LmsSea
 SEARCH_FILTER_GENERATOR = "lms.lib.courseware_search.lms_filter_generator.LmsSearchFilterGenerator"
 # Override to skip enrollment start date filtering in course search
 SEARCH_SKIP_ENROLLMENT_START_DATE_FILTERING = False
+# .. toggle_name: SEARCH_SKIP_INVITATION_ONLY_FILTERING
+# .. toggle_implementation: DjangoSetting
+# .. toggle_default: True
+# .. toggle_description: If enabled, invitation-only courses will appear in search results.
+# .. toggle_use_cases: open_edx
+# .. toggle_creation_date: 2021-08-27
+SEARCH_SKIP_INVITATION_ONLY_FILTERING = True
+# .. toggle_name: SEARCH_SKIP_SHOW_IN_CATALOG_FILTERING
+# .. toggle_implementation: DjangoSetting
+# .. toggle_default: True
+# .. toggle_description: If enabled, courses with a catalog_visibility set to "none" will still
+#    appear in search results.
+# .. toggle_use_cases: open_edx
+# .. toggle_creation_date: 2021-08-27
+SEARCH_SKIP_SHOW_IN_CATALOG_FILTERING = True
 
 # The configuration visibility of account fields.
 ACCOUNT_VISIBILITY_CONFIGURATION = {
@@ -4322,6 +4351,13 @@ COMPREHENSIVE_THEME_DIRS = []
 # .. setting_description: A list of the paths to themes locale directories e.g.
 #   "COMPREHENSIVE_THEME_LOCALE_PATHS" : ["/edx/src/edx-themes/conf/locale"].
 COMPREHENSIVE_THEME_LOCALE_PATHS = []
+
+
+# .. setting_name: PREPEND_LOCALE_PATHS
+# .. setting_default: []
+# .. setting_description: A list of the paths to locale directories to load first e.g.
+#   "PREPEND_LOCALE_PATHS" : ["/edx/my-locales/"].
+PREPEND_LOCALE_PATHS = []
 
 # .. setting_name: DEFAULT_SITE_THEME
 # .. setting_default: None
@@ -4684,7 +4720,6 @@ PROGRAM_CONSOLE_MICROFRONTEND_URL = None
 # .. setting_name: LEARNING_MICROFRONTEND_URL
 # .. setting_default: None
 # .. setting_description: Base URL of the micro-frontend-based courseware page.
-# .. setting_warning: Also set site's courseware.courseware_mfe waffle flag.
 LEARNING_MICROFRONTEND_URL = None
 
 ############### Settings for the ace_common plugin #################

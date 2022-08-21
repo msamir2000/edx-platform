@@ -472,6 +472,18 @@ FEATURES = {
     # .. toggle_target_removal_date: 2021-10-01
     # .. toggle_tickets: 'https://openedx.atlassian.net/browse/MICROBA-1405'
     'ENABLE_V2_CERT_DISPLAY_SETTINGS': False,
+
+    # .. toggle_name: FEATURES['DISABLE_UNENROLLMENT']
+    # .. toggle_implementation: DjangoSetting
+    # .. toggle_default: False
+    # .. toggle_description: Set to True to disable self-unenrollments via REST API.
+    #   This also hides the "Unenroll" button on the Learner Dashboard.
+    # .. toggle_use_cases: open_edx
+    # .. toggle_creation_date: 2021-10-11
+    # .. toggle_warnings: For consistency in user experience, keep the value in sync with the setting of the same name
+    #   in the LMS and CMS.
+    # .. toggle_tickets: 'https://github.com/open-craft/edx-platform/pull/429'
+    'DISABLE_UNENROLLMENT': False,
 }
 
 ENABLE_JASMINE = False
@@ -1994,6 +2006,12 @@ COMPREHENSIVE_THEME_DIRS = []
 # .. setting_description: See LMS annotation.
 #   "COMPREHENSIVE_THEME_LOCALE_PATHS" : ["/edx/src/edx-themes/conf/locale"].
 COMPREHENSIVE_THEME_LOCALE_PATHS = []
+
+# .. setting_name: PREPEND_LOCALE_PATHS
+# .. setting_default: []
+# .. setting_description: A list of the paths to locale directories to load first e.g.
+#   "PREPEND_LOCALE_PATHS" : ["/edx/my-locales/"].
+PREPEND_LOCALE_PATHS = []
 
 # .. setting_name: DEFAULT_SITE_THEME
 # .. setting_default: None
