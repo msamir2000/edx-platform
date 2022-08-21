@@ -1,10 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-    "\\cms",
-    "\\cms\\djangoapps",
-    "\\cms\\djangoapps\\contentstore"
+    "\\common",
+    "\\common\\lib",
+    "\\common\\lib\\xmodule",
+    "\\common\\lib\\xmodule\\xmodule",
+    "\\common\\lib\\xmodule\\xmodule\\video_module"
   ],
-  "SelectedNode": "\\cms\\djangoapps\\contentstore\\courseware_index.py",
+  "SelectedNode": "\\common\\lib\\xmodule\\xmodule\\video_module\\video_xfields.py",
   "PreviewInSolutionExplorer": false
 }
