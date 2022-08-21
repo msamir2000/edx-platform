@@ -1,16 +1,12 @@
 {
   "ExpandedNodes": [
     "",
+    "\\common",
+    "\\common\\lib",
+    "\\common\\lib\\xmodule",
     "\\common\\lib\\xmodule\\xmodule",
-    "\\common\\lib\\xmodule\\xmodule\\js",
-    "\\common\\lib\\xmodule\\xmodule\\templates",
-    "\\common\\lib\\xmodule\\xmodule\\templates\\about",
-    "\\lms",
-    "\\lms\\static",
-    "\\lms\\static\\js",
-    "\\lms\\static\\js\\i18n",
-    "\\lms\\static\\js\\i18n\\uk"
+    "\\common\\lib\\xmodule\\xmodule\\video_module"
   ],
-  "SelectedNode": "\\lms\\static\\js\\i18n\\uk\\djangojs.js",
+  "SelectedNode": "\\common\\lib\\xmodule\\xmodule\\video_module\\video_xfields.py",
   "PreviewInSolutionExplorer": false
 }
