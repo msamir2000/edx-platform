@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\common",
+    "\\common\\lib",
+    "\\common\\lib\\xmodule",
+    "\\common\\lib\\xmodule\\xmodule",
+    "\\common\\lib\\xmodule\\xmodule\\templates",
+    "\\common\\lib\\xmodule\\xmodule\\templates\\about"
+  ],
+  "SelectedNode": "\\common\\lib\\xmodule\\xmodule\\templates\\about\\overview.yaml",
+  "PreviewInSolutionExplorer": false
+}

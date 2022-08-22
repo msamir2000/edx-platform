@@ -821,7 +821,7 @@ class CourseFields:  # lint-amnesty, pylint: disable=missing-class-docstring
         help=_(
             "If dashboard social sharing and custom course URLs are enabled, you can provide a URL "
             "(such as the URL to a course About page) that social media sites can link to. URLs must "
-            "be fully qualified. For example: http://www.edx.org/course/Introduction-to-MOOCs-ITM001"
+            "be fully qualified. For example: https://adopt.lpplus.net/course/Introduction-to-MOOCs-ITM001"
         ),
         default=None,
         scope=Scope.settings,
@@ -838,7 +838,7 @@ class CourseFields:  # lint-amnesty, pylint: disable=missing-class-docstring
         # Translators: please don't translate "id".
         help=_(
             'Configure team sets, limit team sizes, and set visibility settings using JSON. See '
-            '<a target="&#95;blank" href="https://edx.readthedocs.io/projects/edx-partner-course-staff/en/latest/'
+            '<a target="&#95;blank" href="https://lpplus.com/support-centre'
             'course_features/teams/teams_setup.html#enable-and-configure-teams">teams '
             'configuration documentation</a> for help and examples.'
         ),
@@ -1452,7 +1452,7 @@ class CourseBlock(
 
         This is a "number" in the sense of the "course numbers" that you see at
         lots of universities. For example, given a course
-        "Intro to Computer Science" with the course key "edX/CS-101/2014", the
+        "Intro to Computer Science" with the course key "Adopt/CS-101/2014", the
         course number would be "CS-101"
         """
         return course_metadata_utils.number_for_course_location(self.location)
