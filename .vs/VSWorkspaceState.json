@@ -1,13 +1,13 @@
 {
   "ExpandedNodes": [
     "",
-    "\\common",
-    "\\common\\lib",
-    "\\common\\lib\\xmodule",
     "\\common\\lib\\xmodule\\xmodule",
     "\\common\\lib\\xmodule\\xmodule\\templates",
-    "\\common\\lib\\xmodule\\xmodule\\templates\\about"
+    "\\common\\lib\\xmodule\\xmodule\\templates\\about",
+    "\\lms",
+    "\\lms\\templates",
+    "\\lms\\templates\\certificates"
   ],
-  "SelectedNode": "\\common\\lib\\xmodule\\xmodule\\templates\\about\\overview.yaml",
+  "SelectedNode": "\\lms\\templates\\certificates\\_accomplishment-rendering.html",
   "PreviewInSolutionExplorer": false
 }
