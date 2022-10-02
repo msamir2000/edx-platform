@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\lms",
+    "\\lms\\djangoapps",
+    "\\lms\\static\\templates",
+    "\\lms\\static\\templates\\navigation"
+  ],
+  "SelectedNode": "\\lms\\djangoapps\\course_home_api",
+  "PreviewInSolutionExplorer": false
+}
