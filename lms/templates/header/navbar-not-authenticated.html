@@ -51,21 +51,21 @@ from openedx.core.djangoapps.user_authn.toggles import should_redirect_to_authn_
         % if allow_public_account_creation:
           % if should_redirect_to_authn_mfe:
             <div class="mobile-nav-item hidden-mobile nav-item">
-                <a class="register-btn btn" href="${settings.AUTHN_MICROFRONTEND_URL}/register${login_query()}">${_("Register")}</a>
+                <a class="register-btn btn" href="https://injaz.edu.jo/">${_("Register")}</a>
             </div>
           % else:
             <div class="mobile-nav-item hidden-mobile nav-item">
-                <a class="register-btn btn" href="/register${login_query()}">${_("Register")}</a>
+                <a class="register-btn btn" href="https://injaz.edu.jo/">${_("Register")}</a>
             </div>
           % endif
         % endif
         % if should_redirect_to_authn_mfe:
           <div class="mobile-nav-item hidden-mobile nav-item">
-              <a class="sign-in-btn btn" href="${settings.AUTHN_MICROFRONTEND_URL}/login${login_query()}">${_("Sign in")}</a>
+              <a class="sign-in-btn btn" href="https://injaz.edu.jo/">${_("Sign in")}</a>
           </div>
         % else:
           <div class="mobile-nav-item hidden-mobile nav-item">
-              <a class="sign-in-btn btn" href="/login${login_query()}">${_("Sign in")}</a>
+              <a class="sign-in-btn btn" href="https://injaz.edu.jo/">${_("Sign in")}</a>
           </div>
         % endif
       % endif
