@@ -2,10 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\lms",
-    "\\lms\\djangoapps",
-    "\\lms\\static\\templates",
-    "\\lms\\static\\templates\\navigation"
+    "\\lms\\templates",
+    "\\lms\\templates\\header"
   ],
-  "SelectedNode": "\\lms\\djangoapps\\course_home_api",
+  "SelectedNode": "\\lms\\templates\\header\\brand.html",
   "PreviewInSolutionExplorer": false
 }
