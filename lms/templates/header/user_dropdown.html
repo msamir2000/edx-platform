@@ -44,7 +44,7 @@ should_show_order_history = should_redirect_to_order_history_microfrontend() and
         <div class="mobile-nav-item dropdown-item dropdown-nav-item"><a href="${resume_block}" role="menuitem">${_("Resume your last course")}</a></div>
         % endif
         % if not enterprise_customer_portal:
-        <div class="mobile-nav-item dropdown-item dropdown-nav-item"><a href="https://injaz.edu.jo/dashboard" role="menuitem">${_("Dashboard")}</a></div>
+        <div class="mobile-nav-item dropdown-item dropdown-nav-item"><a href="https://injaz.edu.jo/mycourses" role="menuitem">${_("Dashboard")}</a></div>
         % else:
         <div class="mobile-nav-item dropdown-item dropdown-nav-item"><a href="${settings.ENTERPRISE_LEARNER_PORTAL_BASE_URL}/${enterprise_customer_portal.get('slug')}" role="menuitem">${_("Dashboard")}</a></div>
         % endif
