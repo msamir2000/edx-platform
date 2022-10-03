@@ -146,3 +146,4 @@ dist
 
 # Locally generated PII reports
 pii_report
+/.vs
