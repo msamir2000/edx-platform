@@ -2,9 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\lms",
+    "\\lms\\static",
     "\\lms\\templates",
     "\\lms\\templates\\header"
   ],
-  "SelectedNode": "\\lms\\templates\\header\\brand.html",
   "PreviewInSolutionExplorer": false
 }

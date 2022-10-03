@@ -55,8 +55,7 @@ from openedx.core.djangoapps.site_configuration import helpers as configuration_
   </div>
   <div class="secondary">
     % if enable_help_link:
-      <div class="mobile-nav-item hidden-mobile nav-item">
-        <a class="help-link" href="${help_link}" rel="noopener" target="_blank">${_("Help")}</a>
+      <div class="mobile-nav-item hidden-mobile nav-item">        
       </div>
     % endif
     <%include file="user_dropdown.html"/>
