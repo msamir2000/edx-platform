@@ -1,10 +1,13 @@
 {
   "ExpandedNodes": [
     "",
+    "\\common",
+    "\\common\\static",
     "\\lms",
-    "\\lms\\templates",
-    "\\lms\\templates\\header"
+    "\\lms\\static",
+    "\\lms\\static\\templates",
+    "\\lms\\templates"
   ],
-  "SelectedNode": "\\lms\\templates\\header\\navbar-logo-header.html",
+  "SelectedNode": "\\lms\\static\\templates\\index.html",
   "PreviewInSolutionExplorer": false
 }
