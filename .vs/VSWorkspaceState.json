@@ -3,11 +3,8 @@
     "",
     "\\common",
     "\\common\\static",
-    "\\lms",
-    "\\lms\\static",
-    "\\lms\\static\\templates",
-    "\\lms\\templates"
+    "\\lms\\static\\templates"
   ],
-  "SelectedNode": "\\lms\\static\\templates\\index.html",
+  "SelectedNode": "\\lms",
   "PreviewInSolutionExplorer": false
 }
