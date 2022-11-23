@@ -1,10 +1,16 @@
 {
   "ExpandedNodes": [
     "",
+    "\\cms\\static\\js",
+    "\\cms\\static\\js\\i18n",
+    "\\cms\\static\\js\\i18n\\uk",
+    "\\cms\\static\\js\\views",
+    "\\cms\\static\\js\\views\\video",
     "\\common",
-    "\\common\\static",
-    "\\lms\\static\\templates"
+    "\\common\\lib",
+    "\\common\\lib\\xmodule",
+    "\\common\\lib\\xmodule\\xmodule"
   ],
-  "SelectedNode": "\\lms",
+  "SelectedNode": "\\common\\lib\\xmodule\\xmodule\\course_module.py",
   "PreviewInSolutionExplorer": false
 }

@@ -43,28 +43,6 @@ from django.urls import reverse
 </%block>
 
 <%block name="page_alert">
-  %if notification_dismiss_url is not None:
-  <div class="wrapper wrapper-alert wrapper-alert-announcement is-shown">
-    <div class="alert announcement has-actions">
-      <span class="feedback-symbol fa fa-bullhorn" aria-hidden="true"></span>
-
-      <div class="copy">
-        <h2 class="title title-3">${_("This course was created as a re-run. Some manual configuration is needed.")}</h2>
-
-        <p>${_("No course content is currently visible, and no learners are enrolled. Be sure to review and reset all dates, including the Course Start Date; set up the course team; review course updates and other assets for dated material; and seed the discussions and wiki.")}</p>
-      </div>
-
-      <ul class="nav-actions">
-        <li class="action action-dismiss">
-          <a href="#" class="button dismiss-button" data-dismiss-link='${notification_dismiss_url}'>
-            <span class="icon fa fa-times-circle" aria-hidden="true"></span>
-            <span class="button-copy">${_("Dismiss")}</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-  %endif
 
     %if deprecated_blocks_info.get('blocks') or deprecated_blocks_info.get('deprecated_enabled_block_types'):
       <div class="wrapper wrapper-alert wrapper-alert-error is-shown">
