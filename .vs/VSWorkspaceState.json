@@ -2,8 +2,7 @@
   "ExpandedNodes": [
     "",
     "\\cms",
-    "\\cms\\templates",
-    "\\common\\lib\\xmodule\\xmodule"
+    "\\cms\\templates"
   ],
   "SelectedNode": "\\cms\\templates\\course_outline.html",
   "PreviewInSolutionExplorer": false
