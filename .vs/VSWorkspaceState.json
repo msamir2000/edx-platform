@@ -1,16 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\cms\\static\\js",
-    "\\cms\\static\\js\\i18n",
-    "\\cms\\static\\js\\i18n\\uk",
-    "\\cms\\static\\js\\views",
-    "\\cms\\static\\js\\views\\video",
-    "\\common",
-    "\\common\\lib",
-    "\\common\\lib\\xmodule",
+    "\\cms",
+    "\\cms\\templates",
     "\\common\\lib\\xmodule\\xmodule"
   ],
-  "SelectedNode": "\\common\\lib\\xmodule\\xmodule\\course_module.py",
+  "SelectedNode": "\\cms\\templates\\course_outline.html",
   "PreviewInSolutionExplorer": false
 }
