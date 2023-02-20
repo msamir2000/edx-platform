@@ -34,7 +34,7 @@ class VideoFields:
         help=_("Optional, for older browsers: the YouTube ID for the normal speed video."),
         display_name=_("YouTube ID"),
         scope=Scope.settings,
-        default="3_yD_cEKoCk"
+        default="CE8mtYAHx5U"
     )
     youtube_id_0_75 = String(
         help=_("Optional, for older browsers: the YouTube ID for the .75x speed video."),
