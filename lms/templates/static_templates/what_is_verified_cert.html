@@ -1,0 +1,18 @@
+<%page expression_filter="h"/>
+<%! from django.utils.translation import ugettext as _ %>
+<%inherit file="../main.html" />
+
+<%block name="pagetitle">${_("Verified Certificate")}</%block>
+
+<main id="main" aria-label="Content" tabindex="-1">
+    <section class="container about">
+        <h1>
+            <%block name="pageheader">${page_header or _("WHAT IS A VERIFIED CERTIFICATE?")}</%block>
+        </h1>
+        <p>
+            <%block name="pagecontent">${page_content or _("Sometimes you want to take a course just for the sheer joy of learning something new. But sometimes you need to complete a course for a better job, a promotion, or a college application.
+
+            A verified certificate from LP+ADOPT can provide proof for an employer, school, or other institution that you have successfully completed an online course.")}</%block>
+        </p>
+    </section>
+</main>
