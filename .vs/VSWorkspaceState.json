@@ -1,11 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\cms\\templates",
-    "\\cms\\templates\\widgets",
-    "\\xmodule",
-    "\\xmodule\\video_module"
+    "\\lms",
+    "\\lms\\static",
+    "\\lms\\static\\templates",
+    "\\lms\\static\\templates\\emails",
+    "\\lms\\static\\templates\\registration",
+    "\\lms\\static\\templates\\student_account",
+    "\\lms\\static\\templates\\verify_student",
+    "\\lms\\static\\templates\\widgets",
+    "\\lms\\templates"
   ],
-  "SelectedNode": "\\xmodule\\video_module\\video_xfields.py",
+  "SelectedNode": "\\lms\\static\\templates\\emails",
   "PreviewInSolutionExplorer": false
 }
