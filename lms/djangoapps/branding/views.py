@@ -219,7 +219,7 @@ def footer(request):
                 "image": "http://example.com/openedx.png"
             },
             "logo_image": "http://example.com/static/images/logo.png",
-            "copyright": "edX, Open edX and their respective logos are registered trademarks of edX Inc."
+            "copyright": "LP+ADOPT and Logo are registered trademarks of Learning Possibilities Limited."
         }
 
 

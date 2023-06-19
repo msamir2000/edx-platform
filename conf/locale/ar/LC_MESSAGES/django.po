@@ -2303,12 +2303,12 @@ msgstr "الحصول على دورات مجانية في edX.org"
 #: lms/djangoapps/branding/api.py
 #, python-brace-format
 msgid ""
-"© {org_name}.  All rights reserved except where noted.  edX, Open edX and "
-"their respective logos are registered trademarks of edX Inc."
+"© {org_name}.  All rights reserved except where noted. "
+"LP+ADOPT and Logo are registered trademarks of Learning Possibilities Limited."
 msgstr ""
-"© {org_name}.  جميع الحقوق محفوظة فيما عدا المستثناة منها  تعدّ EdX وOpen "
-"edX وشعاراتهم من العلامات التجارية أو العلامات التجارية المسجّلة لدى شركة "
-"edX Inc."
+"© {org_name}.  جميع الحقوق محفوظة فيما عدا المستثناة منها  تعدّ  "
+"LP+ADOPT وشعاراتهم من العلامات التجارية أو العلامات التجارية المسجّلة لدى شركة "
+"Learning Possibilities Limited."
 
 #. #-#-#-#-#  django-partial.po (edx-platform)  #-#-#-#-#
 #. Translators: 'Open edX' is a trademark, please keep this untranslated.

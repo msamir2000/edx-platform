@@ -3,14 +3,8 @@
     "",
     "\\lms",
     "\\lms\\static",
-    "\\lms\\static\\templates",
-    "\\lms\\static\\templates\\emails",
-    "\\lms\\static\\templates\\registration",
-    "\\lms\\static\\templates\\student_account",
-    "\\lms\\static\\templates\\verify_student",
-    "\\lms\\static\\templates\\widgets",
-    "\\lms\\templates"
+    "\\lms\\static\\templates"
   ],
-  "SelectedNode": "\\lms\\static\\templates\\emails",
+  "SelectedNode": "\\lms\\static\\templates\\footer.html",
   "PreviewInSolutionExplorer": false
 }
