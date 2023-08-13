@@ -2,9 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\lms",
-    "\\lms\\static",
-    "\\lms\\static\\templates"
+    "\\lms\\templates",
+    "\\lms\\templates\\static_templates",
+    "\\themes",
+    "\\themes\\red-theme"
   ],
-  "SelectedNode": "\\lms\\static\\templates\\footer.html",
+  "SelectedNode": "\\themes\\open-edx",
   "PreviewInSolutionExplorer": false
 }
