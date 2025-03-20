@@ -1,12 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\cms\\djangoapps\\contentstore",
-    "\\lms\\static",
-    "\\lms\\static\\images\\programs",
+    "\\lms",
     "\\lms\\static\\templates",
-    "\\xmodule\\video_block"
+    "\\lms\\templates"
   ],
-  "SelectedNode": "\\lms",
+  "SelectedNode": "\\lms\\templates\\footer.html",
   "PreviewInSolutionExplorer": false
 }
