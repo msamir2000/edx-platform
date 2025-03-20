@@ -545,9 +545,10 @@ class AboutInfo:
     def from_other_settings(self, **kwargs):
         course = kwargs.get('course', None)
         if not course:
-            raise ValueError("Context dictionary does not contain expected argument 'course' ")
+            raise ValueError("Context dictionary does not contain expected argument 'course'")
         return course.other_course_settings.get('subject')
 
+    FROM_OTHER_SETTINGS = from_other_settings
 
     # Source location options - either from the course or the about info
     FROM_ABOUT_INFO = from_about_dictionary
@@ -568,6 +569,7 @@ class CourseAboutSearchIndexer(CoursewareSearchIndexer):
 
     # List of properties to add to the index - each item in the list is an instance of AboutInfo object
     ABOUT_INFORMATION_TO_INCLUDE = [
+        AboutInfo("subject", AboutInfo.PROPERTY, AboutInfo.FROM_OTHER_SETTINGS),
         AboutInfo("advertised_start", AboutInfo.PROPERTY, AboutInfo.FROM_COURSE_PROPERTY),
         AboutInfo("announcement", AboutInfo.PROPERTY, AboutInfo.FROM_ABOUT_INFO),
         AboutInfo("start", AboutInfo.PROPERTY, AboutInfo.FROM_COURSE_PROPERTY),
@@ -596,8 +598,7 @@ class CourseAboutSearchIndexer(CoursewareSearchIndexer):
         AboutInfo("modes", AboutInfo.PROPERTY, AboutInfo.FROM_COURSE_MODE),
         AboutInfo("language", AboutInfo.PROPERTY, AboutInfo.FROM_COURSE_PROPERTY),
         AboutInfo("invitation_only", AboutInfo.PROPERTY, AboutInfo.FROM_COURSE_PROPERTY),
-        AboutInfo("catalog_visibility", AboutInfo.PROPERTY, AboutInfo.FROM_COURSE_PROPERTY),
-        AboutInfo("subject", AboutInfo.PROPERTY, AboutInfo.FROM_OTHER_SETTINGS),
+        AboutInfo("catalog_visibility", AboutInfo.PROPERTY, AboutInfo.FROM_COURSE_PROPERTY),        
     ]
 
     @classmethod
